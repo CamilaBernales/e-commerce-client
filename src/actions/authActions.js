@@ -1,6 +1,11 @@
-import { REGISTER_SUCCESS, REGISTER_FAILURE } from "../types";
+import { LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT_SUCCESS } from "../types";
 
-const RegisterUser = (user) => ({
-    type: REGISTER_SUCCESS,
-    payload: user,
+const loginSuccess = (user) => ({
+  type: LOGIN_SUCCESS,
+  payload: user,
 });
+const logOutSucess = () =>({
+    type: LOGOUT_SUCCESS
+})
+
+export { loginSuccess, logOutSucess };
