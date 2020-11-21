@@ -4,11 +4,12 @@ import LogoutButton from "./LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "../../actions/authActions";
+import { useSelector } from "react-redux";
 
 const Login = () => {
-  const [logged, setLogged] = useState(false);
   const { user, isAuthenticated, isLoading } = useAuth0();
   const dispatch = useDispatch();
+  const auth = useSelector((state) => state.isLogged);
 
   useEffect(() => {
     const saveUser = () => {
@@ -21,19 +22,10 @@ const Login = () => {
     };
     saveUser();
     // eslint-disable-next-line
-  }, [isLoading, logged]);
+  }, [isLoading]);
 
-  useEffect(() => {
-    const checkLS = () => {
-      let userLs = JSON.parse(localStorage.getItem("user"));
-      if (userLs) {
-        setLogged(true);
-      }
-    };
-    checkLS();
-  }, []);
 
-  return <div>{logged ? <LogoutButton /> : <LoginButton />}</div>;
+  return <div>{auth ? <LogoutButton /> : <LoginButton />}</div>;
 };
 
 export default Login;
