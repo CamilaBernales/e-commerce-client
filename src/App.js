@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import Login from "./components/login/Login";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "./actions/authActions";
+import Header from "./components/layout/Header";
+import Routes from "./components/routes/Routes";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
-
   const dispatch = useDispatch();
   useEffect(() => {
     const saveState = () => {
@@ -15,13 +16,16 @@ function App() {
       }
     };
     saveState();
-        // eslint-disable-next-line
+    // eslint-disable-next-line
   }, []);
 
   return (
+    <BrowserRouter>
     <div className="App">
-      <Login />
+      <Header />
     </div>
+      <Routes />
+    </BrowserRouter>
   );
 }
 

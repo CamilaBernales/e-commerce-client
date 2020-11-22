@@ -9,21 +9,13 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
     <Auth0Provider
-      domain="dev-v1q3cr67.us.auth0.com"
-      clientId="d3RAdBirXyXgsG45XR587Td2UvdgOsnB"
+      domain={process.env.REACT_APP_DOMAIN}
+      clientId={process.env.REACT_APP_CLIENTID}
       redirectUri={window.location.origin}
     >
       <App />
     </Auth0Provider>
     </Provider>
   </React.StrictMode>,
-  // <Provider
-  // // store={store}
-  // //   // domain="dev-v1q3cr67.us.auth0.com"
-  // //   // clientId="d3RAdBirXyXgsG45XR587Td2UvdgOsnB"
-  // //   // redirectUri={window.location.origin}
-  // // >
-  // //   <App />
-  // // </Provider>,
   document.getElementById("root")
 );
