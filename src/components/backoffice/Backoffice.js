@@ -4,8 +4,8 @@ import Content from "./Content";
 const Backoffice = () => {
   return (
     <div className="container lg:mx-auto ">
-      <div className="grid grid-rows-1 sm:w-full  ">
-        <div className="grid lg:grid-cols-2 gap-1">
+      <div className="grid grid-rows-1 sm:w-full ">
+        <div className="grid lg:grid-cols-2 gap-2">
           <div className="max-h-36 ">
             <Sidebar />
           </div>
