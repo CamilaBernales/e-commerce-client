@@ -7,6 +7,7 @@ const ProductsList = () => {
       html: modalTable,
       showCloseButton: true,
       focusConfirm: false,
+      showConfirmButton: false
     });
     return modal;
   };
