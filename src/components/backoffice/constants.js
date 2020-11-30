@@ -14,6 +14,11 @@ const routesAdmin = [
     route: "/backoffice/products",
     private: true,
   },
+  {
+    name: "Pedidos",
+    route: "/backoffice/orders",
+    private: true,
+  },
 ];
 
 export { routesAdmin };

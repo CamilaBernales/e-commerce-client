@@ -1,43 +1,52 @@
 import React from "react";
-
+import Swal from "sweetalert2";
+import { modalTable } from "./ModalDetail";
 const ProductsList = () => {
+  const openModalFn = () => {
+    const modal = Swal.fire({
+      html: modalTable,
+      showCloseButton: true,
+      focusConfirm: false,
+    });
+    return modal;
+  };
+
   return (
-    <div>
-      <table className="table-auto bg-pink-300">
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Dirección</th>
-            <th>Telefóno</th>
-            <th>Pedido</th>
+    <div className="p-1">
+      <table className="table-auto bg-red-200 min-w-full border-separate border border-red-500 ">
+        <thead className="justify-between">
+          <tr className="bg-red-400 text-white">
+            <th className="border border-red-500">Nombre</th>
+            <th className="border border-red-500">Dirección</th>
+            <th className="border border-red-500">Telefóno</th>
+            <th className="border border-red-500">Pedido</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Intro to CSS</td>
-            <td>Adam</td>
-            <td>858</td>
-            <td>
-              <button>ver pedido</button>
+            <td className="border border-red-500">Intro to CSS</td>
+            <td className="border border-red-500">
+              Adam min-w-full min-w-full{" "}
             </td>
-          </tr>
-          <tr className="bg-emerald-200">
-            <td>
-              A Long and Winding Tour of the History of UI Frameworks and Tools
-              and the Impact on Design
-            </td>
-            <td>Adam</td>
-            <td>112</td>
-            <td>
+            <td className="border border-red-500">858</td>
+            <td className="border border-red-500">
               <button>ver pedido</button>
             </td>
           </tr>
           <tr>
-            <td>Intro to JavaScript</td>
-            <td>Chris</td>
-            <td>1,280</td>
-            <td>
+            <td className="border border-red-500">A Long and</td>
+            <td className="border border-red-500">Adam</td>
+            <td className="border border-red-500">112</td>
+            <td className="border border-red-500">
               <button>ver pedido</button>
+            </td>
+          </tr>
+          <tr>
+            <td className="border border-red-500">Intro to JavaScript</td>
+            <td className="border border-red-500">Chris</td>
+            <td className="border border-red-500">1,280</td>
+            <td className="border border-red-500">
+              <button onClick={openModalFn}>ver pedido</button>
             </td>
           </tr>
         </tbody>
