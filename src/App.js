@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Fragment } from "react";
 import "./App.css";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "./actions/authActions";
 import Header from "./components/layout/Header";
 import Routes from "./components/routes/Routes";
 import { BrowserRouter } from "react-router-dom";
+
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -22,7 +23,6 @@ function App() {
     <BrowserRouter>
     <div className="App">
       <Header />
-      
     </div>
       <Routes />
     </BrowserRouter>
